@@ -26,8 +26,8 @@ NVM_VERSION="v0.33.8"
 NODE_VERSION="--lts=carbon"
 
 sudo apt update -y
-sudo apt upgrade -y
-sudo apt update -y
+#sudo apt upgrade -y
+#sudo apt update -y
 
 # Install and configure nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/${NVM_VERSION}/install.sh | bash
@@ -151,6 +151,9 @@ sudo systemctl enable mozilla-iot-gateway.service
 
 # Install required root packages
 sudo ./prepare-base-root.sh
+
+# Unmask hostapd service
+sudo systemctl unmask hostapd
 
 # Check for an update every day.
 sudo systemctl enable mozilla-iot-gateway.check-for-update.timer
