@@ -47,6 +47,7 @@ const SettingsScreen = {
       document.getElementById('discover-addons-button');
     this.experimentSettings = document.getElementById('experiment-settings');
     this.updateSettings = document.getElementById('update-settings');
+    this.deviceUpdateSettings = document.getElementById('device-update-settings');
     this.authorizationSettings =
       document.getElementById('authorization-settings');
     this.developerSettings = document.getElementById('developer-settings');
@@ -85,6 +86,8 @@ const SettingsScreen = {
     this.insertTitleElement(this.experimentSettings, 'Experiments',
                             '/optimized-images/experiments-icon.png');
     this.insertTitleElement(this.updateSettings, 'Updates',
+                            '/optimized-images/update-icon.svg');
+    this.insertTitleElement(this.deviceUpdateSettings, 'Device Updates',
                             '/optimized-images/update-icon.svg');
     this.insertTitleElement(this.authorizationSettings, 'Authorizations',
                             '/optimized-images/authorization.svg');
@@ -145,6 +148,7 @@ const SettingsScreen = {
     this.addonDiscoverySettings.classList.add('hidden');
     this.experimentSettings.classList.add('hidden');
     this.updateSettings.classList.add('hidden');
+    this.deviceUpdateSettings.classList.add('hidden');
     this.authorizationSettings.classList.add('hidden');
     this.developerSettings.classList.add('hidden');
     this.discoverAddonsButton.classList.add('hidden');
@@ -210,6 +214,9 @@ const SettingsScreen = {
         break;
       case 'updates':
         this.showUpdateSettings();
+        break;
+      case 'deviceupdates':
+        this.showDeviceUpdateSettings();
         break;
       case 'authorizations':
         this.showAuthorizationSettings();
@@ -884,6 +891,36 @@ const SettingsScreen = {
     }).catch(() => {
       updateNow.textContent = 'Error';
     });
+  },
+
+  showDeviceUpdateSettings: function() {
+    this.deviceUpdateSettings.classList.remove('hidden');
+    const deviceUpdateNow = document.getElementById('device-update-now');
+
+    deviceUpdateNow.addEventListener('click', this.onDeviceUpdateClick);
+    this.fetchDeviceUpdateInfo();
+  },
+
+  fetchDeviceUpdateInfo: function() {
+    const deviceUpToDateElt = document.getElementById('device-update-settings-up-to-date');
+    const deviceUpdateNow = document.getElementById('device-update-now');
+    const deviceVersionElt = document.getElementById('device-update-settings-version');
+    const deviceStatusElt = document.getElementById('device-update-settings-status');
+
+    if (true) {
+      // Update available
+      deviceUpToDateElt.textContent = 'New firmware available';
+      deviceUpdateNow.classList.remove('hidden');
+      deviceUpdateNow.classList.remove('disabled');
+    } else {
+      // All up to date!
+      deviceUpToDateElt.textContent = 'Your devices are up to date';
+      deviceUpdateNow.classList.add('hidden');
+    }
+  },
+
+  onDeviceUpdateClick: function() {
+    // TBD
   },
 
   showAuthorizationSettings: function() {

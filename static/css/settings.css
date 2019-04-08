@@ -141,6 +141,10 @@
   background-image: url('../optimized-images/update-icon.svg');
 }
 
+#device-update-settings-link {
+  background-image: url('../optimized-images/update-icon.svg');
+}
+
 #authorization-settings-link {
   background-image: url('../optimized-images/authorization.svg');
 }
@@ -210,6 +214,7 @@
 #domain-settings ul,
 #experiment-settings ul,
 #update-settings ul,
+#device-update-settings ul,
 #authorization-settings ul,
 #developer-settings ul {
   position: absolute;
@@ -228,7 +233,8 @@
 #addon-settings ul li:last-child,
 #domain-settings ul li:last-child,
 #experiment-settings ul li:last-child,
-#update-settings ul li:last-child {
+#update-settings ul li:last-child,
+#device-update-settings ul li:last-child {
   margin-bottom: 3rem;
 }
 
@@ -599,6 +605,29 @@
 }
 
 #update-settings-up-to-date {
+}
+
+#device-update-now.hidden {
+  display: none;
+}
+
+#device-update-settings > .settings-container {
+  font-size: 1.8rem;
+}
+
+#device-up-to-date-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#device-update-now {
+  font-size: 1.8rem;
+  padding: 1.8rem;
+  margin-left: 1rem;
+  background: #305067;
+}
+
+#device-update-settings-up-to-date {
 }
 
 .authorization-item {
