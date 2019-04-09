@@ -210,13 +210,56 @@
       </section>
       <section id="device-update-settings" class="hidden settings-section">
         <ul>
-          <li class="update-item" id="device-up-to-date-container">
+          <li id="device-up-to-date-container" class="device-update-item">
             <p id="device-update-settings-up-to-date"></p>
-            <button id="device-update-now" class="text-button hidden">Update Firmware</button>
+            <button id="device-update-now" class="text-button hidden">Download</button>
           </li>
-          <li class="update-item">
+          <li class="device-update-item device-firmware-upload">
+            <p>Manually upload firmware update</p>
+            <form id="device-update-manual-upload-container">
+              <input style="padding:1rem;" type="file"></input>
+              <button id="device-update-now" class="text-button">Upload</button>
+            </form>
+          </li>
+          <li class="device-update-item device-type-rht">
+            <p>Clime G3-01</p>
             <p id="device-update-settings-version"></p>
             <p id="device-update-settings-status"></p>
+          </li>
+          <li class="device-update-item device-type-rht">
+            <p>Clime G3-02</p>
+            <p id="device-update-settings-version"></p>
+            <p id="device-update-settings-status"></p>
+          </li>
+          <li class="device-update-item device-type-sw">
+              <p>Portal G3-01</p>
+              <p id="device-update-settings-version"></p>
+              <p id="device-update-settings-status"></p>
+          </li>
+          <li class="device-update-item device-type-oc">
+              <p>Optic G3-01</p>
+              <p id="device-update-settings-version"></p>
+              <p id="device-update-settings-status"></p>
+          </li>
+          <li class="device-update-item device-type-oc">
+              <p>Optic G3-02</p>
+              <p id="device-update-settings-version"></p>
+              <p id="device-update-settings-status"></p>
+          </li>
+          <li class="device-update-item device-type-rs485">
+            <p>Serial G3-01</p>
+            <p id="device-update-settings-version"></p>
+            <p id="device-update-settings-status"></p>
+          </li>
+          <li class="device-update-item device-type-usb">
+              <p>Echo G3-01</p>
+              <p id="device-update-settings-version"></p>
+              <p id="device-update-settings-status"></p>
+          </li>
+          <li class="device-update-item device-type-pls">
+              <p>Pulse G3-01</p>
+              <p id="device-update-settings-version"></p>
+              <p id="device-update-settings-status"></p>
           </li>
         </ul>
       </section>

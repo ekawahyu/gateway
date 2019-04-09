@@ -258,6 +258,7 @@
 .developer-checkbox-item,
 .experiment-item,
 .update-item,
+.device-update-item,
 .authorization-item,
 .domain-item {
   display: block;
@@ -524,6 +525,32 @@
   padding: 2rem;
 }
 
+.device-update-item.hidden {
+  display: none;
+}
+
+.device-firmware-upload {
+  background-image:url("../optimized-images/upload.png");
+}
+.device-type-rht {
+  background-image:url("../optimized-images/rht-icon.png");
+}
+.device-type-sw {
+  background-image:url("../optimized-images/sw-icon.png");
+}
+.device-type-oc {
+  background-image:url("../optimized-images/oc-icon.png");
+}
+.device-type-usb {
+  background-image:url("../optimized-images/usb-icon.png");
+}
+.device-type-pls {
+  background-image:url("../optimized-images/pls-icon.png");
+}
+.device-type-rs485 {
+  background-image:url("../optimized-images/rs485-icon.png");
+}
+
 :root .developer-checkbox,
 :root .experiment-checkbox {
   /* original check box is pushed outside the viewport */
@@ -628,6 +655,17 @@
 }
 
 #device-update-settings-up-to-date {
+}
+
+#device-update-manual-upload-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+  #device-update-manual-upload-container {
+    flex-direction: column;
+  }
 }
 
 .authorization-item {

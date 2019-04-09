@@ -907,9 +907,11 @@ const SettingsScreen = {
     const deviceVersionElt = document.getElementById('device-update-settings-version');
     const deviceStatusElt = document.getElementById('device-update-settings-status');
 
-    if (true) {
+    const newFirmwareUpdateAvailable = true;
+
+    if (newFirmwareUpdateAvailable) {
       // Update available
-      deviceUpToDateElt.textContent = 'New firmware available';
+      deviceUpToDateElt.textContent = 'New firmware update available';
       deviceUpdateNow.classList.remove('hidden');
       deviceUpdateNow.classList.remove('disabled');
     } else {
